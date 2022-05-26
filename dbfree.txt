@@ -1,0 +1,61 @@
+Base de datos: farmaciadb123
+Nombre de usuario: administrador88
+Correo electrónico: juanigtz4@outlook.com
+contraseña admin1234
+
+
+
+Host: sql10.freesqldatabase.com
+Database name: sql10484748
+Database user: sql10484748
+Database password: bEuFyDVExv
+Port number: 3306
+
+
+
+-- MySQL Workbench Forward Engineering
+
+SET @OLD_UNIQUE_CHECKS=@@UNIQUE_CHECKS, UNIQUE_CHECKS=0;
+SET @OLD_FOREIGN_KEY_CHECKS=@@FOREIGN_KEY_CHECKS, FOREIGN_KEY_CHECKS=0;
+SET @OLD_SQL_MODE=@@SQL_MODE, SQL_MODE='ONLY_FULL_GROUP_BY,STRICT_TRANS_TABLES,NO_ZERO_IN_DATE,NO_ZERO_DATE,ERROR_FOR_DIVISION_BY_ZERO,NO_ENGINE_SUBSTITUTION';
+
+-- -----------------------------------------------------
+-- Schema mydb
+-- -----------------------------------------------------
+-- -----------------------------------------------------
+-- Schema farma
+-- -----------------------------------------------------
+
+-- -----------------------------------------------------
+-- Schema farma
+-- -----------------------------------------------------
+CREATE SCHEMA IF NOT EXISTS `farma` DEFAULT CHARACTER SET utf8mb4 COLLATE utf8mb4_0900_ai_ci ;
+USE `farma` ;
+
+-- -----------------------------------------------------
+-- Table `farma`.`paciente`
+-- -----------------------------------------------------
+CREATE TABLE IF NOT EXISTS `farma`.`paciente` (
+  `id_paciente` INT NOT NULL AUTO_INCREMENT,
+  `nombre` VARCHAR(45) NOT NULL,
+  `apellidos` VARCHAR(45) NOT NULL,
+  `fecha_nacimiento` VARCHAR(45) NOT NULL,
+  `dni` INT NOT NULL,
+  `n_historia_clinica` INT NOT NULL,
+  `sexo` VARCHAR(45) NOT NULL,
+  `peso` DOUBLE NULL DEFAULT NULL,
+  `altura` DOUBLE NULL DEFAULT NULL,
+  `diagnostico` VARCHAR(45) NULL DEFAULT NULL,
+  `farmaco` VARCHAR(45) NULL DEFAULT NULL,
+  PRIMARY KEY (`id_paciente`),
+  UNIQUE INDEX `id_paciente_UNIQUE` (`id_paciente` ASC) VISIBLE,
+  UNIQUE INDEX `dni_UNIQUE` (`dni` ASC) VISIBLE,
+  UNIQUE INDEX `n_historia_clinica_UNIQUE` (`n_historia_clinica` ASC) VISIBLE)
+ENGINE = InnoDB
+DEFAULT CHARACTER SET = utf8mb4
+COLLATE = utf8mb4_0900_ai_ci;
+
+
+SET SQL_MODE=@OLD_SQL_MODE;
+SET FOREIGN_KEY_CHECKS=@OLD_FOREIGN_KEY_CHECKS;
+SET UNIQUE_CHECKS=@OLD_UNIQUE_CHECKS;
